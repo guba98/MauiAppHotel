@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource PrimaryDark}">
+    
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="10">
+        <Label 
+            Text="Calculo da Diária"
+            FontFamily="Montserrat"
+            FontSize="50"
+            HorizontalOptions="Center"
+            TextColor="{StaticResource PrimaryDarkText}" />
+
+        <Frame Padding="10">
+            <VerticalStackLayout>
+                <Label Text="Numero de Pessoas"
+                       FontFamily="Montserrat"
+                       FontSize="20"
+                       Padding="10"
+                       HorizontalOptions="Center"/>
+                
+                <Grid RowDefinitions="Auto, Auto"
+                      ColumnDefinitions="*, *, 2*"
+                      Padding="10"
+                      ColumnSpacing="30"
+                      HorizontalOptions="Center">
+
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="Adultos: "
+                           FontFamily="Montserrat"/>
+
+                    <Label Grid.Row="0" Grid.Column="1"
+                           TextColor="{StaticResource Secondary}"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_adultos}"/>
+
+                    <Stepper Grid.Row="0" Grid.Column="2"
+                             x:Name="stp_adultos"
+                             Maximum="10"
+                             Minimum="0"
+                             Increment="1" />
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="Crianças: " 
+                           FontFamily="Montserrat"/>
+
+                    <Label Grid.Row="1" Grid.Column="1"
+                           TextColor="{StaticResource Secondary}"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_criancas}"/>
+
+                    <Stepper Grid.Row="1" Grid.Column="2"
+                             x:Name="stp_criancas"
+                             Maximum="10"
+                             Minimum="0"
+                             Increment="1" />
+                </Grid>
+
+                <Label Text="Escolha sua suite" 
+                       FontFamily="Montserrat"
+                       FontSize="20"
+                       Padding="10"
+                       HorizontalOptions="Center"/>
+
+                <Picker x:Name="pck_quarto"
+                        Title="Selecione sua Acomodação:"
+                        FontFamily="Montserrat"/>
+
+                <Frame Padding="10"
+                       Margin="10">
+                    <VerticalStackLayout>
+                        <Label Text="Periodo da Estadia"
+                               FontFamily="Montserrat"
+                               FontSize="20"
+                               HorizontalOptions="Center"/>
+
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Check-in:"
+                                   VerticalOptions="Center"
+                                   FontFamily="Montserrat"/>
+                            <DatePicker x:Name="dt_checkin"
+                                        Format="dd/MM/yyyy"
+                                        Margin="10"
+                                        FontFamily="Montserrat"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Check-out:" 
+                                   VerticalOptions="Center"
+                                   FontFamily="Montserrat"/>
+                            <DatePicker x:Name="dt_checkout"
+                                        Format="dd/MM/yyyy"
+                                        Margin="10"
+                                        FontFamily="Montserrat"
+                                        />
+                        </HorizontalStackLayout>
+
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Button Text="Confirmar"
+                        FontFamily="Montserrat"
+                        FontSize="20"/>
+
+
+                
+            </VerticalStackLayout>
+            
+        </Frame>
+
+        <Button Text="Sobre"
+                FontFamily="Montserrat"
+                FontSize="16"
+                Margin="10,70,10,10"
+                Clicked="Button_Clicked"
+                BackgroundColor="Transparent"
+                TextColor="{StaticResource Tertiary}"/>
+    </VerticalStackLayout>
+</ContentPage>
