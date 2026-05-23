@@ -104,7 +104,8 @@
 
                 <Button Text="Confirmar"
                         FontFamily="Montserrat"
-                        FontSize="20"/>
+                        FontSize="20"
+                        Clicked="Button_Clicked_1"/>
 
 
                 

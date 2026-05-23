@@ -18,4 +18,16 @@ public partial class ContratacaoHospedagem : ContentPage
 			DisplayAlert("Ocorreu um erro", ex.Message, "OK");
 		}
 	}
+
+	private void Button_Clicked_1(object sender, EventArgs e)
+	{
+		try
+		{
+			Navigation.PushAsync(new HospedagemContratada());
+		}
+		catch (Exception ex)
+		{
+			DisplayAlert("Ocorreu um erro", ex.Message, "OK");
+		}
+	}	
 }
