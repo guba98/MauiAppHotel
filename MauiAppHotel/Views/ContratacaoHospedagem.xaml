@@ -68,7 +68,8 @@
 
                 <Picker x:Name="pck_quarto"
                         Title="Selecione sua Acomodação:"
-                        FontFamily="Montserrat"/>
+                        FontFamily="Montserrat"
+                        ItemDisplayBinding="{Binding Descricao}"/>
 
                 <Frame Padding="10"
                        Margin="10">
@@ -82,17 +83,18 @@
                             <Label Text="Check-in:"
                                    VerticalOptions="Center"
                                    FontFamily="Montserrat"/>
-                            <DatePicker x:Name="dt_checkin"
+                            <DatePicker x:Name="dtpck_checkin"
                                         Format="dd/MM/yyyy"
                                         Margin="10"
-                                        FontFamily="Montserrat"/>
+                                        FontFamily="Montserrat"
+                                        DateSelected="dtpck_checkin_DateSelected"/>
                         </HorizontalStackLayout>
 
                         <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Check-out:" 
                                    VerticalOptions="Center"
                                    FontFamily="Montserrat"/>
-                            <DatePicker x:Name="dt_checkout"
+                            <DatePicker x:Name="dtpck_checkout"
                                         Format="dd/MM/yyyy"
                                         Margin="10"
                                         FontFamily="Montserrat"
