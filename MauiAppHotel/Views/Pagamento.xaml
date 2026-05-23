@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.Pagamento"
+             Title="Pagamento"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource PrimaryDark}">
+    
+    <VerticalStackLayout VerticalOptions="CenterAndExpand">
+
+        <Image Source="dotnet_bot.png" />
+        
+        <Label 
+                Text="Ops, página de pagamento ainda não foi desenvolvida!"
+                HorizontalTextAlignment="Center"
+                FontSize="20"
+                HorizontalOptions="Center"
+                FontFamily="Montserrat"/>
+        
+        <Button Text="Voltar"
+                HorizontalOptions="Center"
+                Clicked="Button_Clicked"
+                />
+    </VerticalStackLayout>
+</ContentPage>
