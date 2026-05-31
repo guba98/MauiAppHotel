@@ -7,7 +7,7 @@
              Background="{StaticResource PrimaryDark}">
     <VerticalStackLayout VerticalOptions="CenterAndExpand">
 
-        <Label Text="Suite Super Luxo"
+        <Label Text="{Binding QuartoSelecionado.Descricao}"
                TextColor="{StaticResource PrimaryDarkText}"
                FontFamily="Montserrat"
                FontSize="50"
@@ -18,7 +18,7 @@
                 <HorizontalStackLayout Margin="10"  >
                     <Label Text="Adultos: "
                            Margin="10"/>
-                    <Label Text="2" 
+                    <Label Text="{Binding QntAdultos}" 
                            TextColor="{StaticResource Secondary}" 
                            FontFamily="Montserrat"
                            Margin="10"/>
@@ -27,7 +27,7 @@
                 <HorizontalStackLayout Margin="10">
                     <Label Text="Crianças: "
                            Margin="10"/>
-                    <Label Text="1"
+                    <Label Text="{Binding QntCriancas}"
                            TextColor="{StaticResource Secondary}"
                            FontFamily="Montserrat" 
                            Margin="10"/>
@@ -45,16 +45,16 @@
                 <Label Grid.Row="0" Grid.Column="1" Text="Check-out" FontFamily="Montserrat" Margin="10" HorizontalOptions="Center"/>
                 <Label Grid.Row="0" Grid.Column="2" Text="Estadia:" FontFamily="Montserrat" Margin="10" HorizontalOptions="Center"/>
 
-                <Label Grid.Row="1" Grid.Column="0" Text="27/05/26" FontFamily="Montserrat" Margin="10" HorizontalOptions="Center"/>
-                <Label Grid.Row="1" Grid.Column="1" Text="30/05/26" FontFamily="Montserrat" Margin="10" HorizontalOptions="Center"/>
-                <Label Grid.Row="1" Grid.Column="2" Text="3" FontFamily="Montserrat" Margin="10" HorizontalOptions="Center"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataCheckIn, StringFormat='{}{0:dd/MM/yyyy}'}" FontFamily="Montserrat" Margin="10" HorizontalOptions="Center"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataCheckOut, StringFormat='{}{0:dd/MM/yyyy}'}" FontFamily="Montserrat" Margin="10" HorizontalOptions="Center"/>
+                <Label Grid.Row="1" Grid.Column="2" Text="{Binding Estadia}" FontFamily="Montserrat" Margin="10" HorizontalOptions="Center"/>
             </Grid>
         </Frame>
         <Frame Margin="10">
             
             <HorizontalStackLayout HorizontalOptions="Center" Scale="1.3">
-                <Label Text="Valor total:" FontFamily="Montserrat" Margin="10 " />
-                <Label Text="R$ 750,00" FontFamily="Montserrat" Margin="10" FontSize="20" />
+                <Label Text="Valor total:" FontFamily="Montserrat" Margin="10 " VerticalOptions="Center" />
+                <Label Text="{Binding ValorTotal, StringFormat='{}{0:c}'}" FontFamily="Montserrat" Margin="10" FontSize="20" />
             </HorizontalStackLayout>
         </Frame>
         <Button Text="Confirmar"
